@@ -61,3 +61,27 @@ function setLanguageText(language) {
 const browserLanguage = navigator.language || navigator.userLanguage;
 
 setLanguageText(browserLanguage);
+
+
+setTimeout(function () {
+  const currentPosition =
+    window.pageYOffset ||
+    document.documentElement.scrollTop ||
+    document.body.scrollTop;
+
+  const pageHeight = Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.body.clientHeight,
+    document.documentElement.clientHeight
+  );
+
+  const scrollOptions = {
+    top: pageHeight,
+    behavior: "smooth",
+  };
+
+  window.scrollTo(scrollOptions);
+}, 3000);
